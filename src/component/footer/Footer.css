@@ -1,0 +1,47 @@
+.footer{
+    margin-top: 4rem;
+    height: 60vh;
+    width: 100%;
+    background-image: url(https://kenh14cdn.com/203336854389633024/2020/12/24/photo-1-1608777956361164835477.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer .footer-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(88, 88, 88,0.5);
+}
+.footer .wrap-footer-content{
+    height: 70%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: rgba(88, 88, 88,0.7);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+@media only screen and (max-width: 810px) {
+    .footer-hidden-810 {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    .footer-hidden-480 {
+      display: none;
+    }
+  }
+.footer .wrap-footer-content h4{
+    transition: linear 0.3s;
+}
+.footer .wrap-footer-content h4:hover{
+    color: #ff0700c7;
+    cursor: pointer;
+}
