@@ -143,9 +143,7 @@ function HomePage() {
                     }
                     return (
                         <div className="card-item" key={tvShow.id}>
-                            <Link className="link" to="/movie">
                                 <Card {...props}></Card>
-                            </Link>
                         </div>
                     )
                 })}

@@ -1,0 +1,99 @@
+.movieDescription{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-origin: content-box;
+    height: 100vh;
+    font-weight: bold;
+    z-index: -1;
+}
+
+.movieDescription  .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(240,240,240,0.7) 0%, rgba(215,215,215,0.7) 11%, rgba(105,105,105,0.7) 53%, rgba(31,31,31,1) 87%);
+}
+
+.movieDescription .content-movie{
+    margin-top: 9rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 75%;
+    width: 70%;
+    z-index: 1;
+}
+
+.movieDescription .content-movie .posterImg{
+    margin: 0 1rem;
+    height: 100%;
+    border-radius: 2rem;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.7);
+}
+
+.content-movie .leftContent-movie{
+    margin-top: 1rem;
+    padding-left: 0.7rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(61, 61, 61,0.3);
+    border-radius: 2rem;
+    -webkit-box-shadow: 4px 3px 9px 5px rgba(0,0,0,0.5); 
+box-shadow: 4px 3px 9px 5px rgba(0,0,0,0.5);
+}
+
+.movieDescription  .leftContent-movie .listGenres{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.movieDescription  .leftContent-movie .listGenres .listGenres-item{
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+}
+
+.movieDescription  .leftContent-movie .listGenres .listGenres-item:hover{
+    cursor: default;
+}
+.movieDescription  .leftContent-movie .castsTitle{
+    margin: 0;
+}
+.movieDescription .leftContent-movie .listCasts{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: flex-start;
+}
+.movieDescription .leftContent-movie .listCasts .listCasts-item{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.movieDescription .leftContent-movie .listCasts .listCasts-item img{
+    height: 8rem;
+    width: 5rem;
+}
+.movieDescription .leftContent-movie .listCasts .listCasts-item p{
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+}
+
+@media only screen and (max-width: 960px) {
+    .movieDescription .content-movie  .posterImg{
+        display: none;
+    }
+  }
+

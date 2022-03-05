@@ -82,6 +82,45 @@ const fetchApi = {
         }
         // console.log(data.results)s
         return data
+    },
+    getMovieDescription: async (idMovie=0)=>{
+        let urlTrendingMovies = `${apiConfig.baseUrl}/movie/${idMovie}?api_key=${apiConfig.apiKey}&language=en-US`
+        let data
+        try{
+            let res = await fetch(urlTrendingMovies)
+            data = await res.json()
+        }
+        catch(err) {
+            console.log(err)
+        }
+        // console.log(data.results)s
+        return data
+    },
+    getListCast: async (idMovie=0)=>{
+        let urlTrendingMovies = `${apiConfig.baseUrl}/movie/${idMovie}/credits?api_key=${apiConfig.apiKey}&language=en-US`
+        let data
+        try{
+            let res = await fetch(urlTrendingMovies)
+            data = await res.json()
+        }
+        catch(err) {
+            console.log(err)
+        }
+        // console.log(data.results)s
+        return data
+    },
+    getListVideos: async (idMovie=0)=>{
+        let urlTrendingMovies = `${apiConfig.baseUrl}/movie/${idMovie}/videos?api_key=${apiConfig.apiKey}&language=en-US`
+        let data
+        try{
+            let res = await fetch(urlTrendingMovies)
+            data = await res.json()
+        }
+        catch(err) {
+            console.log(err)
+        }
+        // console.log(data.results)s
+        return data
     }
 }
 
