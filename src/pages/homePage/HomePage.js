@@ -21,11 +21,12 @@ function HomePage() {
 
     const settings = {
         slidesToShow: 5,
-        infinite: false,
+        infinite: true,
         swipeToSlide: true,
         focusOnSelect: true,
-        initialSlide: 3,
+        initialSlide: 0,
         arrows: false,
+        dots: true,
         responsive: [
             {
                 breakpoint: 1100,
@@ -60,6 +61,7 @@ function HomePage() {
         setTopRateMovies(await fetchApi.getTopRateMovies())
         setTopTrendingTV(await fetchApi.getTrendingTVShows())
         setTopRatedTV(await fetchApi.getTopRatedTVShows())
+        window.scrollTo(0,0)
     }, [])
     //console.log(topRatedTV)
     return (

@@ -121,6 +121,19 @@ const fetchApi = {
         }
         // console.log(data.results)s
         return data
+    },
+    getListSimilarVideos: async (idMovie=0)=>{
+        let urlTrendingMovies = `${apiConfig.baseUrl}/movie/${idMovie}/similar?api_key=${apiConfig.apiKey}&language=en-US&page=1`
+        let data
+        try{
+            let res = await fetch(urlTrendingMovies)
+            data = await res.json()
+        }
+        catch(err) {
+            console.log(err)
+        }
+        // console.log(data.results)s
+        return data
     }
 }
 
