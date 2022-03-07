@@ -6,11 +6,10 @@ import apiConfig from '../../api/apiConfig';
 import './Card.css'
 function Card(props) {
     //console.log(props)
-    const { id, title, img, overview } = props;
-    
+    const { id, title, img, overview,type="movie" } = props;
     return (
         <>
-            <Link className="link" to={`/movie/${id}`}>
+            <Link className="link" to={`/${type}/${id}`}>
                 <img src={img==null?"https://mediawebben.se/assets/img/error/thumbnail.png":apiConfig.w500Image(img)}></img>
                 {
                     overview != "" &&

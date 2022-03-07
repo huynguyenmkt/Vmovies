@@ -7,7 +7,7 @@ import {
 
 import fetchApi from "../../api/fetchApi"
 import apiConfig from "../../api/apiConfig"
-import Footer from "../footer/Footer"
+import Footer from "../../component/footer/Footer"
 import Card from "../../component/cards/Card"
 import './MovieDescription.css'
 function MovieDescription() {

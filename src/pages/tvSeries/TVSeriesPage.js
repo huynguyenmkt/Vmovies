@@ -1,60 +1,60 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-import fetchApi from "../../api/fetchApi"
-import Card from "../../component/cards/Card"
+import Card from "../../component/cards/Card";
+import fetchApi from "../../api/fetchApi";
 import Footer from "../../component/footer/Footer";
-import './MoviePage.css'
-function MoviePage() {
-    const [keyWord, setKeyWord] = useState("")
-    const [movies, setMovies] = useState([])
+function TVSeriesPage(){
     const [data, setData] = useState({})
-    const [page, setPage] = useState(0);
+    const [tvSeries, setTvSeries] = useState([])
+    const [keyWord, setKeyWord] = useState("")
     const [isSubmited,setIsSubmited] = useState(false)
-    useEffect(async () => {
-        let dataTemp
-        if(keyWord===""){
-            dataTemp = await fetchApi.getMoviesForMoviePage(page + 1)
-        }else{
-            dataTemp = await fetchApi.searchMovies(keyWord,page+1)
-        }
-        let moviesTemp = await dataTemp.results
-        setData(dataTemp)
-        setMovies(moviesTemp)
-        window.scrollTo(0,0)
-        setIsSubmited(false)
-    }, [page,isSubmited])
-    
-    const handleChanePage = (e) => {
-        setPage(e.selected);
-    };  
-    const handleChangeInput = (e) => {
-        setKeyWord(e.target.value)
-    }
+    const [page, setPage] = useState(0);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmited(true);
     }
+    const handleChangeInput = (e) => {
+        setKeyWord(e.target.value)
+    }
+    const handleChanePage = (e) => {
+        setPage(e.selected);
+    };
+    useEffect(async () => {
+        let dataTemp
+        if(keyWord===""){
+            dataTemp = await fetchApi.getTVShowsForTVSeriesPage(page + 1)
+        }else{
+            dataTemp = await fetchApi.searchTVSeries(keyWord,page+1)
+        }
+        let tvSeries = await dataTemp.results
+        setData(dataTemp)
+        setTvSeries(tvSeries)
+        window.scrollTo(0,0)
+        setIsSubmited(false)
+    }, [page,isSubmited])
+
     return (
         <div className="moviePage">
             <div className="headerImg"></div>
             <div className="overlay"></div>
-            <h2 className="title">Movies</h2>
+            <h2 className="title">TV Series</h2>
             <form className="formSearch" onSubmit={handleSubmit}>
                 <input className="input" type="text" placeholder="Enter Keyword" value={keyWord} onChange={handleChangeInput}></input>
                 <button className="btnSearch" type="submit">Search</button>
             </form>
             <div className="moviePage-movies">
-                {movies.map((movie) => {
+                {tvSeries.map((tvSerie) => {
                     let props = {
-                        id: movie.id,
-                        title: movie.original_title,
-                        img: movie.poster_path,
-                        overview: movie.overview.length > 300 ? movie.overview.slice(0, 300) + "..." : movie.overview
+                        id: tvSerie.id,
+                        title: tvSerie.name,
+                        img: tvSerie.poster_path,
+                        overview: tvSerie.overview.length > 300 ? tvSerie.overview.slice(0, 300) + "..." : tvSerie.overview
                     }
                     return (
-                        <div className="card-item" key={movie.id}>
-                            <Card {...props} ></Card>
+                        <div className="card-item" key={tvSerie.id}>
+                            <Card {...props} type="tv"></Card>
                         </div>
                     )
                 })}
@@ -82,4 +82,4 @@ function MoviePage() {
     )
 }
 
-export default MoviePage
+export default TVSeriesPage

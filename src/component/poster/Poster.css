@@ -91,7 +91,33 @@
     cursor: pointer;
     animation: pulse-black 1s infinite;
 }
-
+/* ////////////////// */
+    /* Trailer */
+/* ////////////////// */
+.trailer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.trailer .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #808080e0;
+    z-index: 2;
+}
+.trailer iframe{
+    width: 70%;
+    height: 70%;
+    z-index: 3;
+}
 @keyframes pulse-black {
     0% {
       transform: scale(0.95);
@@ -112,6 +138,9 @@
   @media only screen and (max-width: 1030px) {
     .poster-item .poster-text{
         display: none;
+    }
+    .trailer iframe{
+        width: 100%;
     }
   }
   @media only screen and (max-width: 600px) {

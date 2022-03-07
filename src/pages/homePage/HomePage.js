@@ -131,7 +131,7 @@ function HomePage() {
             </Slider>
             <div className="title-slicker">
                 <h3>Top Trending TV Shows</h3>
-                <button className="btn btn-viewMore"><Link className="link" to="/movie">View more</Link></button>
+                <button className="btn btn-viewMore"><Link className="link" to="/tvseries">View more</Link></button>
             </div>
             <Slider
                 {...settings}
@@ -145,14 +145,14 @@ function HomePage() {
                     }
                     return (
                         <div className="card-item" key={tvShow.id}>
-                                <Card {...props}></Card>
+                                <Card {...props} type="tv"></Card>
                         </div>
                     )
                 })}
             </Slider>
             <div className="title-slicker">
                 <h3>Top Rated TV Shows</h3>
-                <button className="btn btn-viewMore"><Link className="link" to="/movie">View more</Link></button>
+                <button className="btn btn-viewMore"><Link className="link" to="/tvseries">View more</Link></button>
             </div>
             <Slider
                 {...settings}
@@ -166,7 +166,7 @@ function HomePage() {
                     }
                     return (
                         <div className="card-item" key={tvShow.id}>
-                            <Card {...props}></Card>
+                            <Card {...props} type="tv"></Card>
                         </div>
                     )
                 })}
