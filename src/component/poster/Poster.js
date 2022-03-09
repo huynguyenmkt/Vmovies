@@ -18,7 +18,8 @@ function Poster(props) {
         setShowTrailer(false)
     }
     return (
-        <div className="poster-item" style={{ backgroundImage: `url(${apiConfig.originalImage(posterImg)})` }}>
+        <div className="poster-item" style={{ backgroundImage: `url(${apiConfig.originalImage(posterImg)})`}}>
+            <div className="overlay-Poster"></div>
             {showTrailer &&
                 <div className="trailer">
                     <div className="overlay" onClick={handleHiddenTraiLer}>

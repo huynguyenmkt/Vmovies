@@ -18,6 +18,7 @@ function Heading() {
     return (
         <>
             <div className="wrap-navbar">
+                <img className="logo" src={process.env.PUBLIC_URL+"myLOGOW500.png"}></img>
                 <ul className="navbar">
                     <li>
                         <Link className={`nav-item ${active==='home'?'active':''}`} onClick={handleChangeHomePage} to="/">Home</Link>
