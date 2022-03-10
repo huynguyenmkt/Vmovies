@@ -8,13 +8,11 @@ import { useState } from "react";
 import HomePage from './pages/homePage/HomePage';
 import MoviePage from "./pages/moviePage/MoviePage";
 import TVSeriesPage from "./pages/tvSeries/TVSeriesPage";
-import Heading from './component/Heading/Heading';
 import MovieDescription from "./pages/movieDesciption/MovieDescription";
 import TVSeriesDescription from "./pages/tvSeriesDescriptionPage/TVSeriesDescription";
 function App() {
   return (
     <div className="App">
-      <Heading></Heading>
       <Routes>
         <Route path="/movie" element={<MoviePage />}>
         </Route>

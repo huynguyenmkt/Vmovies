@@ -4,8 +4,8 @@ import {
 } from "react-router-dom";
 
 import './Heading.css'
-function Heading() {
-    const [active,setActive] = useState('home')
+function Heading({pageActive}) {
+    const [active,setActive] = useState(pageActive)
     const handleChangeHomePage = ()=>{
         setActive('home')
     }
